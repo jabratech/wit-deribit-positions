@@ -1,0 +1,7 @@
+interface deribit-positions-handler {
+  use jabratech:common/types.{response-error};
+  use types.{deribit-positions-response};
+
+  get:  func(currency: string) -> result<deribit-positions-response, response-error>;
+  
+}

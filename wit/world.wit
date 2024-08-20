@@ -1,0 +1,5 @@
+package jabratech:deribit-positions;
+
+world deribit-positions {
+    export deribit-positions-handler;
+}

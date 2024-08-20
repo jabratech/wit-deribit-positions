@@ -1,0 +1,43 @@
+interface types {
+    use jabratech:common/types.{greeks};
+
+    record position{
+        estimated-liquidation-price: option<f64>,
+        size-currency: option<f64>,
+        total-profit-loss: f64,
+        realized-profit-loss: f64,
+        floating-profit-loss: f64,
+        leverage: option<s64>,
+        average-price: f64,
+        delta: f64,
+        open-orders-margin: option<f64>,
+        initial-margin: f64,
+        maintenance-margin: f64,
+        settlement-price: f64,
+        instrument-name: string,
+        mark-price: f64,
+        index-price: f64,
+        direction: string,
+        kind: string,
+        size: f64,
+        floating-profit-loss-usd: option<f64>,
+        average-price-usd: option<f64>,
+        theta: option<f64>,
+        vega: option<f64>,
+        gamma: option<f64>,
+        realized-funding: option<f64>,
+        interest-value: option<f64>,
+    }
+    record deribit{
+        greeks: greeks,
+        pnl: f64,
+        positions: list<position>
+    }
+
+    record deribit-positions-response{
+        code: s16,
+        message: string,
+        data: deribit
+    }
+
+}
